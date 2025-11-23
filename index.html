@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC Quiz Game - Kaun Banega Crorepati</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="logo-container">
+                <h1 class="game-title">KAUN BANEGA<br>CROREPATI</h1>
+                <p class="tagline">Test Your Knowledge, Win Big!</p>
+            </div>
+            <div class="player-input">
+                <input type="text" id="playerName" placeholder="Enter Your Name" maxlength="20">
+                <button onclick="startGame()" class="btn-primary">START GAME</button>
+            </div>
+            <div class="menu-options">
+                <button onclick="showLeaderboard()" class="btn-secondary">🏆 LEADERBOARD</button>
+                <button onclick="showHelp()" class="btn-secondary">❓ HOW TO PLAY</button>
+            </div>
+        </div>
+
+        <!-- Help Screen -->
+        <div id="helpScreen" class="screen">
+            <div class="content-box">
+                <h2>HOW TO PLAY</h2>
+                <div class="help-content">
+                    <p>📝 <strong>Game Rules:</strong></p>
+                    <ul>
+                        <li>There are TWO ROUNDS: Warmup Round & Challenge Round</li>
+                        <li><strong>Warmup Round:</strong> Answer 3 questions correctly (minimum 2) to qualify</li>
+                        <li><strong>Challenge Round:</strong> Answer 10 questions to win up to ₹1,00,00,000!</li>
+                        <li>Each correct answer awards ₹1,00,000</li>
+                        <li>No negative marking for wrong answers</li>
+                        <li>Choose from 4 options (A, B, C, D)</li>
+                    </ul>
+                    <p>🎯 <strong>Goal:</strong> Answer all questions correctly to become a CROREPATI!</p>
+                </div>
+                <button onclick="showStart()" class="btn-primary">BACK TO MENU</button>
+            </div>
+        </div>
+
+        <!-- Warmup Round -->
+        <div id="warmupScreen" class="screen">
+            <div class="game-header">
+                <h2>WARMUP ROUND</h2>
+                <p id="warmupQuestion" class="question-number">Question 1 of 3</p>
+            </div>
+            <div class="question-container">
+                <p id="warmupQ" class="question-text"></p>
+                <div class="options" id="warmupOptions"></div>
+            </div>
+            <div id="warmupResult" class="result-message"></div>
+        </div>
+
+        <!-- Challenge Round -->
+        <div id="challengeScreen" class="screen">
+            <div class="game-header">
+                <div class="score-display">
+                    <span class="score-label">PRIZE MONEY</span>
+                    <span id="currentScore" class="score-value">₹0</span>
+                </div>
+                <p id="challengeQuestion" class="question-number">Question 1 of 10</p>
+            </div>
+            <div class="question-container">
+                <p id="challengeQ" class="question-text"></p>
+                <div class="options" id="challengeOptions"></div>
+            </div>
+            <div id="challengeResult" class="result-message"></div>
+        </div>
+
+        <!-- Final Score Screen -->
+        <div id="finalScreen" class="screen">
+            <div class="content-box final-box">
+                <h2 id="finalMessage"></h2>
+                <div class="final-score">
+                    <p class="final-amount" id="finalAmount"></p>
+                    <p class="player-name" id="finalPlayerName"></p>
+                </div>
+                <div class="menu-options">
+                    <button onclick="location.reload()" class="btn-primary">PLAY AGAIN</button>
+                    <button onclick="showLeaderboard()" class="btn-secondary">VIEW LEADERBOARD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="screen">
+            <div class="content-box">
+                <h2>🏆 LEADERBOARD</h2>
+                <div id="leaderboardList" class="leaderboard-list"></div>
+                <button onclick="showStart()" class="btn-primary">BACK TO MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
