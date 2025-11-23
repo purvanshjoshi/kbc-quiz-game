@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1629 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Start Screen */
+.logo-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #FFD700, #FFA500, #FF6B35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: glow 2s ease-in-out infinite;
+    line-height: 1.2;
+}
+
+@keyframes glow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #4A90E2;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+.player-input {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#playerName {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-family: 'Rajdhani', sans-serif;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #4A90E2;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+#playerName:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.menu-options {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #0a0e27;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(74, 144, 226, 0.2);
+    color: #4A90E2;
+    border: 2px solid #4A90E2;
+}
+
+.btn-secondary:hover {
+    background: rgba(74, 144, 226, 0.3);
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+/* Content Box */
+.content-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.content-box h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.help-content {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.help-content ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.help-content li {
+    margin: 10px 0;
+}
+
+/* Game Header */
+.game-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.game-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.question-number {
+    font-size: 1.2rem;
+    color: #4A90E2;
+}
+
+.score-display {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.score-label {
+    font-size: 0.9rem;
+    color: #0a0e27;
+    font-weight: 600;
+    display: block;
+}
+
+.score-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #0a0e27;
+    font-weight: 900;
+}
+
+/* Question Container */
+.question-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Options */
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background: rgba(74, 144, 226, 0.2);
+    border-color: #4A90E2;
+    transform: translateX(10px);
+}
+
+.option-btn.correct {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: #4CAF50;
+    animation: correctPulse 0.5s;
+}
+
+.option-btn.wrong {
+    background: rgba(244, 67, 54, 0.3);
+    border-color: #F44336;
+    animation: shake 0.5s;
+}
+
+@keyframes correctPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Result Message */
+.result-message {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.result-message.correct {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.result-message.wrong {
+    color: #F44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+/* Final Screen */
+.final-box {
+    text-align: center;
+}
+
+.final-score {
+    margin: 40px 0;
+}
+
+.final-amount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    color: #FFD700;
+    font-weight: 900;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.player-name {
+    font-size: 1.5rem;
+    color: #4A90E2;
+}
+
+/* Leaderboard */
+.leaderboard-list {
+    margin: 30px 0;
+}
+
+.leaderboard-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(74, 144, 226, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leaderboard-item:nth-child(1) {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.leaderboard-item:nth-child(2) {
+    border-color: #C0C0C0;
+}
+
+.leaderboard-item:nth-child(3) {
+    border-color: #CD7F32;
+}
+
+.rank {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #FFD700;
+    margin-right: 20px;
+}
+
+.player-info {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.score {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: #4A90E2;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2.5rem;
+    }
+    
+    .question-text {
+        font-size: 1.2rem;
+    }
+    
+    .option-btn {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .final-amount {
+        font-size: 2.5rem;
+    }
+    
+    .content-box {
+        padding: 25px;
+    }
+}
