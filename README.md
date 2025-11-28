@@ -36,3 +36,44 @@ Test your knowledge with this exciting KBC-style quiz game! Inspired by the popu
 ---
 
 **Created by Purvansh Joshi** | CS Engineering Student at Graphic Era University
+
+## Game Architecture
+
+### Frontend Structure
+- **index.html:** Main game interface with responsive design
+- **style.css:** CSS Grid and Flexbox layout with smooth animations
+- **script.js:** Game logic, event handling, and DOM manipulation
+
+### Game Flow
+1. Initial loading of question database
+2. Random question selection from pool
+3. Real-time score calculation and tracking
+4. Lifeline system management
+5. Leaderboard persistence using localStorage
+
+## Performance Optimization
+
+- **Lazy Loading:** Questions loaded on demand
+- **DOM Caching:** Minimized DOM manipulation
+- **Event Delegation:** Efficient event listener management
+- **CSS Animations:** GPU-accelerated transitions
+- **Local Storage:** Fast leaderboard retrieval
+
+## User Interface Highlights
+
+- **Responsive Design:** Works on desktop, tablet, and mobile
+- **Accessibility:** Keyboard navigation support
+- **Visual Feedback:** Immediate response to user actions
+- **Difficulty Progression:** Questions become harder as you advance
+- **Real-time Statistics:** Score and question tracking
+
+## Future Enhancements
+
+- [ ] Multiplayer mode with real-time competition
+- [ ] Cloud-based leaderboard
+- [ ] Customizable question sets
+- [ ] Social media integration
+- [ ] Dark mode theme
+- [ ] Question categorization and filtering
+- [ ] Mobile app deployment
+- [ ] Sound effects customization
