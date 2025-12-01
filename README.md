@@ -61,7 +61,7 @@ Test your knowledge with this exciting KBC-style quiz game! Inspired by the popu
 
 ## User Interface Highlights
 
-- **Responsive Design:** Works on desktop, tablet, and mobile
+- **Responsive Design:** Works on desktop, tablet, & mobile
 - **Accessibility:** Keyboard navigation support
 - **Visual Feedback:** Immediate response to user actions
 - **Difficulty Progression:** Questions become harder as you advance
