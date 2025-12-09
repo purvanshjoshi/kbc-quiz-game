@@ -76,4 +76,4 @@ Test your knowledge with this exciting KBC-style quiz game! Inspired by the popu
 - [ ] Dark mode theme
 - [ ] Question categorization and filtering
 - [ ] Mobile app deployment
-- [ ] Sound effects customization.
+- [ ] Sound effects customization
