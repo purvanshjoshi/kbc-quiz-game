@@ -1,7 +1,7 @@
 # kbc-quiz-game
 An interactive KBC-inspired quiz game with multiple-choice questions, score tracking, leaderboard, and engaging UI. Built with HTML, CSS, and JavaScript.
 
-## 🎮 About the Game
+## 🎮 About the Game:-
 
 Test your knowledge with this exciting KBC-style quiz game! Inspired by the popular Indian game show "Kaun Banega Crorepati", this interactive quiz challenges you with multiple-choice questions across various topics.
 
